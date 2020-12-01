@@ -1,32 +1,19 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
+
+	"github.com/dstokes/advent-of-code-2020/lib/input"
 )
 
-var nums []int
-
-func read() {
-	scanner := bufio.NewScanner(os.Stdin)
-
-	for scanner.Scan() {
-		num, err := strconv.Atoi(scanner.Text())
-		if err != nil {
-			fmt.Println(err)
-		}
-		nums = append(nums, num)
-	}
-
-	if err := scanner.Err(); err != nil {
-		fmt.Println(err)
-	}
-}
+const target = 2020
 
 func main() {
-	read()
-	fmt.Println(part1())
-	fmt.Println(part2())
+	nums, err := input.ToInts()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("Part 1: %d\nPart 2: %d\n",
+		part1(nums, target), part2(nums, target))
 }
