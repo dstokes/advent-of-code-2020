@@ -33,3 +33,17 @@ func ToInts() ([]int, error) {
 	}
 	return ret, err
 }
+
+func ToStrings() ([]string, error) {
+	var ret []string
+
+	scanner, err := ScannerFromFile()
+	if err != nil {
+		return ret, err
+	}
+
+	for scanner.Scan() {
+		ret = append(ret, scanner.Text())
+	}
+	return ret, err
+}
