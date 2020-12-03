@@ -12,10 +12,10 @@ type route struct {
 	x, y, trees int
 }
 
-func countTrees(routes []*route) {
+func countTrees(routes []*route) (err error) {
 	scanner, err := input.ScannerFromFile()
 	if err != nil {
-		panic(err)
+		return
 	}
 
 	for y := 1; scanner.Scan(); y++ {
@@ -35,11 +35,15 @@ func countTrees(routes []*route) {
 			}
 		}
 	}
+	return
 }
 
 func part1() int {
 	routes := []*route{{x: 3, y: 1}}
-	countTrees(routes)
+	err := countTrees(routes)
+	if err != nil {
+		panic(err)
+	}
 	return routes[0].trees
 }
 
@@ -51,7 +55,10 @@ func part2() int {
 		{x: 7, y: 1},
 		{x: 1, y: 2},
 	}
-	countTrees(routes)
+	err := countTrees(routes)
+	if err != nil {
+		panic(err)
+	}
 	trees := 1
 	for _, r := range routes {
 		trees *= r.trees
