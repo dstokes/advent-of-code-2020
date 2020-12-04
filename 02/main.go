@@ -27,7 +27,12 @@ func tokenize(line string) (min int, max int, char string, pass string, err erro
 	return min, max, char, pass, err
 }
 
-func part1(lines []string) int {
+func part1() int {
+	lines, err := input.ToStrings()
+	if err != nil {
+		panic(err)
+	}
+
 	valid := 0
 	for _, line := range lines {
 		min, max, char, pass, err := tokenize(line)
@@ -42,7 +47,12 @@ func part1(lines []string) int {
 	return valid
 }
 
-func part2(lines []string) int {
+func part2() int {
+	lines, err := input.ToStrings()
+	if err != nil {
+		panic(err)
+	}
+
 	valid := 0
 	for _, line := range lines {
 		min, max, char, pass, err := tokenize(line)
@@ -65,11 +75,6 @@ func part2(lines []string) int {
 }
 
 func main() {
-	lines, err := input.ToStrings()
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Printf("Part 1: %d\n", part1(lines))
-	fmt.Printf("Part 2: %d\n", part2(lines))
+	fmt.Printf("Part 1: %d\n", part1())
+	fmt.Printf("Part 2: %d\n", part2())
 }
