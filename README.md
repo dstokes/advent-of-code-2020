@@ -44,11 +44,29 @@ This one felt like work.
 ### Benchmarks
 
 ```
+04 #master ✗ go test -memprofile mem.prof -bench .; echo; go tool pprof -text -nodecount 10 mem.prof
 goos: darwin
 goarch: amd64
 pkg: github.com/dstokes/advent-of-code-2020/04
-BenchmarkPart1-12           2823            401076 ns/op
-BenchmarkPart2-12            211           5662563 ns/op
+BenchmarkPart1-12           2898            362095 ns/op
+BenchmarkPart2-12            256           4699865 ns/op
 PASS
-ok      github.com/dstokes/advent-of-code-2020/04       3.028s
+ok      github.com/dstokes/advent-of-code-2020/04       2.808s
+
+Type: alloc_space
+Time: Dec 4, 2020 at 2:52pm (PST)
+Showing nodes accounting for 1619.72MB, 89.30% of 1813.78MB total
+Dropped 17 nodes (cum <= 9.07MB)
+Showing top 10 nodes out of 45
+      flat  flat%   sum%        cum   cum%
+  424.26MB 23.39% 23.39%   424.26MB 23.39%  regexp/syntax.(*compiler).inst
+  276.33MB 15.24% 38.63%   276.33MB 15.24%  regexp.onePassCopy
+  249.53MB 13.76% 52.38%   249.53MB 13.76%  regexp/syntax.(*parser).newRegexp
+  186.52MB 10.28% 62.67%   357.57MB 19.71%  github.com/dstokes/advent-of-code-2020/04.part1
+  111.01MB  6.12% 68.79%   111.01MB  6.12%  strings.genSplit
+  106.55MB  5.87% 74.66%   259.06MB 14.28%  regexp.makeOnePass
+   72.51MB  4.00% 78.66%    72.51MB  4.00%  regexp/syntax.(*Regexp).Simplify
+      68MB  3.75% 82.41%       68MB  3.75%  bufio.(*Scanner).Text (inline)
+      65MB  3.58% 85.99%    92.50MB  5.10%  regexp.makeOnePass.func1
+      60MB  3.31% 89.30%       60MB  3.31%  regexp.newQueue (inline)
 ```
