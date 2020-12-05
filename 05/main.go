@@ -7,37 +7,30 @@ import (
 	"github.com/dstokes/advent-of-code-2020/lib/input"
 )
 
-func search(coords []byte, haystack []int) int {
-	h := haystack
-	for _, v := range coords {
+func search(pass []byte, min int, max int) int {
+	for _, v := range pass {
+		mid := (min + max) >> 1
 		if v == 'L' || v == 'F' {
-			h = h[:len(h)/2]
+			max = mid
 		}
 		if v == 'R' || v == 'B' {
-			h = h[len(h)/2:]
+			min = mid + 1
 		}
 	}
-	return h[0]
+	return min
 }
 
-func part1(ids *[]int) (max int) {
+func part1() (max int) {
 	scanner, err := input.ScannerFromFile()
 	if err != nil {
 		panic(err)
 	}
 
-	cols := []int{0, 1, 2, 3, 4, 5, 6, 7}
-	rows := make([]int, 128)
-	for i := 0; i < 128; i++ {
-		rows[i] = i
-	}
-
 	for scanner.Scan() {
 		line := scanner.Bytes()
-		row := search(line[:len(line)-3], rows)
-		col := search(line[len(line)-3:], cols)
+		row := search(line[:len(line)-3], 0, 127)
+		col := search(line[len(line)-3:], 0, 7)
 		id := row*8 + col
-		*ids = append(*ids, id)
 		if id > max {
 			max = id
 		}
@@ -46,7 +39,20 @@ func part1(ids *[]int) (max int) {
 	return
 }
 
-func part2(ids []int) int {
+func part2() int {
+	scanner, err := input.ScannerFromFile()
+	if err != nil {
+		panic(err)
+	}
+
+	var ids []int
+	for scanner.Scan() {
+		line := scanner.Bytes()
+		row := search(line[:len(line)-3], 0, 127)
+		col := search(line[len(line)-3:], 0, 7)
+		ids = append(ids, row*8+col)
+	}
+
 	sort.Ints(ids)
 	off := ids[0]
 	for _, v := range ids {
@@ -59,8 +65,6 @@ func part2(ids []int) int {
 }
 
 func main() {
-	var ids []int
-	max := part1(&ids)
-	fmt.Printf("Part 1: %d\n", max)
-	fmt.Printf("Part 2: %d\n", part2(ids))
+	fmt.Printf("Part 1: %d\n", part1())
+	fmt.Printf("Part 2: %d\n", part2())
 }

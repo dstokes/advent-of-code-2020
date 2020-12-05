@@ -52,4 +52,5 @@ Day 5
 
 | Benchmark | Iterations | Execution Time | Bytes       | Allocations    |
 | --------- | ---------- | -------------- | ----------- | -------------- |
-| Part1     | 12115      | 97025 ns/op    | 20720 B/op  | 16 allocs/op   |
+| Part1     | 12537      | 95840 ns/op    | 4344 B/op   |  5 allocs/op   |
+| Part2     | 5659       | 181623 ns/op   | 20752 B/op  |  17 allocs/op  |
