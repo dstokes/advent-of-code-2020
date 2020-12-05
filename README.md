@@ -44,3 +44,12 @@ This one felt like work.
 | --------- | ---------- | -------------- | ----------- | -------------- |
 | Part1     | 3141       | 381199 ns/op   | 129945 B/op | 2457 allocs/op |
 | Part2     | 1914       | 581040 ns/op   | 137460 B/op | 3153 allocs/op |
+
+Day 5
+-----
+
+### Benchmarks
+
+| Benchmark | Iterations | Execution Time | Bytes       | Allocations    |
+| --------- | ---------- | -------------- | ----------- | -------------- |
+| Part1     | 12115      | 97025 ns/op    | 20720 B/op  | 16 allocs/op   |
