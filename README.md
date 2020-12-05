@@ -3,6 +3,36 @@
 Day 1
 -----
 
+### Benchmarks
+
+```
+01 #master ✗ go test -memprofile mem.prof -bench .; echo; go tool pprof -text -nodecount 10 mem.prof
+goos: darwin
+goarch: amd64
+pkg: github.com/dstokes/advent-of-code-2020/01
+BenchmarkPart1-12          23790             52093 ns/op
+BenchmarkPart2-12           3243            364024 ns/op
+PASS
+ok      github.com/dstokes/advent-of-code-2020/01       2.981s
+
+Type: alloc_space
+Time: Dec 4, 2020 at 6:01pm (PST)
+Showing nodes accounting for 530.12MB, 99.91% of 530.62MB total
+Dropped 3 nodes (cum <= 2.65MB)
+Showing top 10 nodes out of 15
+      flat  flat%   sum%        cum   cum%
+  191.84MB 36.15% 36.15%   483.02MB 91.03%  github.com/dstokes/advent-of-code-2020/01.part1
+  143.06MB 26.96% 63.11%   143.06MB 26.96%  bufio.(*Scanner).Scan
+  135.18MB 25.48% 88.59%   315.74MB 59.50%  github.com/dstokes/advent-of-code-2020/lib/input.ToInts
+   27.50MB  5.18% 93.77%    27.50MB  5.18%  bufio.(*Scanner).Text (inline)
+   23.04MB  4.34% 98.12%    47.60MB  8.97%  github.com/dstokes/advent-of-code-2020/01.part2
+       6MB  1.13% 99.25%        6MB  1.13%  bufio.NewScanner (inline)
+    3.50MB  0.66% 99.91%     3.50MB  0.66%  os.newFile
+         0     0% 99.91%   483.02MB 91.03%  github.com/dstokes/advent-of-code-2020/01.BenchmarkPart1
+         0     0% 99.91%    47.60MB  8.97%  github.com/dstokes/advent-of-code-2020/01.BenchmarkPart2
+         0     0% 99.91%       10MB  1.88%  github.com/dstokes/advent-of-code-2020/lib/input.ScannerFromFile
+```
+
 Day 2
 -----
 
