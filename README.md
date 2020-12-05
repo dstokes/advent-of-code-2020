@@ -5,20 +5,20 @@ Day 1
 
 ### Benchmarks
 
-| Benchmark | Cores | Executions | Execution Time |
-| --------- | ----- | ---------- | -------------- |
-| Part1     | 12    | 23790      | 52093 ns/op    |
-| Part2     | 12    | 3243       | 364024 ns/op   |
+| Benchmark | Iterations | Execution Time |
+| --------- | ---------- | -------------- |
+| Part1     | 23790      | 52093 ns/op    |
+| Part2     | 3243       | 364024 ns/op   |
 
 Day 2
 -----
 
 ### Benchmarks
 
-| Benchmark | Cores | Executions | Execution Time |
-| --------- | ----- | ---------- | -------------- |
-| Part1     | 12    | 3990       | 252644 ns/op   |
-| Part2     | 12    | 4314       | 279405 ns/op   |
+| Benchmark | Iterations | Execution Time |
+| --------- | ---------- | -------------- |
+| Part1     | 3990       | 252644 ns/op   |
+| Part2     | 4314       | 279405 ns/op   |
 
 Day 3
 -----
@@ -28,10 +28,10 @@ easily fixed.
 
 ### Benchmarks
 
-| Benchmark | Cores | Executions | Execution Time |
-| --------- | ----- | ---------- | -------------- |
-| Part1     | 12    | 29230      | 41723 ns/op    |
-| Part2     | 12    | 17044      | 70384 ns/op    |
+| Benchmark | Iterations | Execution Time |
+| --------- | ---------- | -------------- |
+| Part1     | 29230      | 41723 ns/op    |
+| Part2     | 17044      | 70384 ns/op    |
 
 Day 4
 -----
@@ -40,7 +40,7 @@ This one felt like work.
 
 ### Benchmarks
 
-| Benchmark | Cores | Executions | Execution Time |
-| --------- | ----- | ---------- | -------------- |
-| Part1     | 12    | 3141       | 381199 ns/op   |
-| Part2     | 12    | 1914       | 581040 ns/op   |
+| Benchmark | Iterations | Execution Time | Bytes       | Allocations    |
+| --------- | ---------- | -------------- | ----------- | -------------- |
+| Part1     | 3141       | 381199 ns/op   | 129945 B/op | 2457 allocs/op |
+| Part2     | 1914       | 581040 ns/op   | 137460 B/op | 3153 allocs/op |
