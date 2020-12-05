@@ -48,25 +48,25 @@ This one felt like work.
 goos: darwin
 goarch: amd64
 pkg: github.com/dstokes/advent-of-code-2020/04
-BenchmarkPart1-12           2898            362095 ns/op
-BenchmarkPart2-12            256           4699865 ns/op
+BenchmarkPart1-12        3141       381199 ns/op
+BenchmarkPart2-12           1914            581040 ns/op
 PASS
-ok      github.com/dstokes/advent-of-code-2020/04       2.808s
+ok      github.com/dstokes/advent-of-code-2020/04       3.616s
 
 Type: alloc_space
-Time: Dec 4, 2020 at 2:52pm (PST)
-Showing nodes accounting for 1619.72MB, 89.30% of 1813.78MB total
-Dropped 17 nodes (cum <= 9.07MB)
-Showing top 10 nodes out of 45
+Time: Dec 4, 2020 at 4:53pm (PST)
+Showing nodes accounting for 1006.70MB, 99.75% of 1009.21MB total
+Dropped 26 nodes (cum <= 5.05MB)
+Showing top 10 nodes out of 11
       flat  flat%   sum%        cum   cum%
-  424.26MB 23.39% 23.39%   424.26MB 23.39%  regexp/syntax.(*compiler).inst
-  276.33MB 15.24% 38.63%   276.33MB 15.24%  regexp.onePassCopy
-  249.53MB 13.76% 52.38%   249.53MB 13.76%  regexp/syntax.(*parser).newRegexp
-  186.52MB 10.28% 62.67%   357.57MB 19.71%  github.com/dstokes/advent-of-code-2020/04.part1
-  111.01MB  6.12% 68.79%   111.01MB  6.12%  strings.genSplit
-  106.55MB  5.87% 74.66%   259.06MB 14.28%  regexp.makeOnePass
-   72.51MB  4.00% 78.66%    72.51MB  4.00%  regexp/syntax.(*Regexp).Simplify
-      68MB  3.75% 82.41%       68MB  3.75%  bufio.(*Scanner).Text (inline)
-      65MB  3.58% 85.99%    92.50MB  5.10%  regexp.makeOnePass.func1
-      60MB  3.31% 89.30%       60MB  3.31%  regexp.newQueue (inline)
+  386.05MB 38.25% 38.25%   743.13MB 73.64%  github.com/dstokes/advent-of-code-2020/04.part1
+  268.01MB 26.56% 64.81%   268.01MB 26.56%  strings.genSplit
+  183.01MB 18.13% 82.94%   183.01MB 18.13%  bufio.(*Scanner).Text (inline)
+  132.02MB 13.08% 96.02%   265.56MB 26.31%  github.com/dstokes/advent-of-code-2020/04.part2
+   28.61MB  2.84% 98.86%    28.61MB  2.84%  bufio.(*Scanner).Scan
+       9MB  0.89% 99.75%        9MB  0.89%  github.com/dstokes/advent-of-code-2020/04.match
+         0     0% 99.75%   743.13MB 73.64%  github.com/dstokes/advent-of-code-2020/04.BenchmarkPart1
+         0     0% 99.75%   265.56MB 26.31%  github.com/dstokes/advent-of-code-2020/04.BenchmarkPart2
+         0     0% 99.75%   268.01MB 26.56%  strings.Split (inline)
+         0     0% 99.75%  1008.20MB 99.90%  testing.(*B).launch
 ```

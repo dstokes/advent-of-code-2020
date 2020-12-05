@@ -9,19 +9,25 @@ import (
 	"github.com/dstokes/advent-of-code-2020/lib/input"
 )
 
+var rgx = map[string]*regexp.Regexp{
+	"hcl": regexp.MustCompile("^#[0-9a-f]{6}$"),
+	"ecl": regexp.MustCompile("^(amb|blu|brn|gry|grn|hzl|oth)$"),
+	"pid": regexp.MustCompile("^[0-9]{9}$"),
+}
+
 var spec = map[string]func(string) (bool, error){
 	"byr": func(v string) (bool, error) { return between(v, 1920, 2002) },
 	"iyr": func(v string) (bool, error) { return between(v, 2010, 2020) },
 	"eyr": func(v string) (bool, error) { return between(v, 2020, 2030) },
 	"hgt": func(v string) (bool, error) { return validHeight(v) },
-	"hcl": func(v string) (bool, error) { return match(v, "^#[0-9a-f]{6}$") },
-	"ecl": func(v string) (bool, error) { return match(v, "^(amb|blu|brn|gry|grn|hzl|oth)$") },
-	"pid": func(v string) (bool, error) { return match(v, "^[0-9]{9}$") },
+	"hcl": func(v string) (bool, error) { return match(v, rgx["hcl"]) },
+	"ecl": func(v string) (bool, error) { return match(v, rgx["ecl"]) },
+	"pid": func(v string) (bool, error) { return match(v, rgx["pid"]) },
 	"cid": func(v string) (bool, error) { return true, nil },
 }
 
-func match(s string, r string) (bool, error) {
-	return regexp.MatchString(r, s)
+func match(s string, r *regexp.Regexp) (bool, error) {
+	return r.Match([]byte(s)), nil
 }
 
 func between(n string, min int, max int) (bool, error) {
