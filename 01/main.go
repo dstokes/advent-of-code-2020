@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/dstokes/advent-of-code-2020/lib/input"
+	"github.com/dstokes/advent-of-code-2020/pkg/input"
 )
 
 const target = 2020

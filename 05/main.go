@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/dstokes/advent-of-code-2020/lib/input"
+	"github.com/dstokes/advent-of-code-2020/pkg/input"
 )
 
 func search(pass []byte, min int, max int) int {

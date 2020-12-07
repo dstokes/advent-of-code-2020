@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/dstokes/advent-of-code-2020/lib/input"
+	"github.com/dstokes/advent-of-code-2020/pkg/input"
 	"github.com/dstokes/advent-of-code-2020/pkg/util"
 )
 

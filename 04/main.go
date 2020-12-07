@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/dstokes/advent-of-code-2020/lib/input"
+	"github.com/dstokes/advent-of-code-2020/pkg/input"
 )
 
 var rgx = map[string]*regexp.Regexp{

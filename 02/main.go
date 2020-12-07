@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/dstokes/advent-of-code-2020/lib/input"
+	"github.com/dstokes/advent-of-code-2020/pkg/input"
 )
 
 func tokenize(line string) (min int, max int, char string, pass string, err error) {
