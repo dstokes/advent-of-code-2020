@@ -58,7 +58,6 @@ func part2() (total int) {
 			p.AddBytes(person)
 			answers = answers.Intersect(p)
 		}
-		//fmt.Println(answers, answers.Cardinality())
 		total += answers.Cardinality()
 	}
 
@@ -66,6 +65,6 @@ func part2() (total int) {
 }
 
 func main() {
-	//fmt.Printf("Part 1: %d\n", part1())
+	fmt.Printf("Part 1: %d\n", part1())
 	fmt.Printf("Part 2: %d\n", part2())
 }

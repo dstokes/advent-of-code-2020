@@ -37,7 +37,7 @@ func (set *Set) Intersect(other Set) Set {
 	inter := NewSet()
 	if set.Cardinality() < other.Cardinality() {
 		for v := range set.s {
-			if set.Contains(v) {
+			if other.Contains(v) {
 				inter.Add(v)
 			}
 		}
