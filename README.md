@@ -94,3 +94,12 @@ Day 9
 | --------- | ---------- | -------------- | ----------- | -------------- |
 | Part1     | 91         | 13013206 ns/op | 6120113 B/op| 16772 allocs/op|
 | Part2     | 6613       | 193274 ns/op   | 39128 B/op  | 1020 allocs/op |
+
+Day 10
+------
+
+### Benchmarks
+
+| Benchmark | Iterations | Execution Time | Bytes       | Allocations    |
+| --------- | ---------- | -------------- | ----------- | -------------- |
+| Part1     | 34816      | 38335 ns/op    | 6664 B/op   | 106 allocs/op  |
