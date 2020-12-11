@@ -103,3 +103,4 @@ Day 10
 | Benchmark | Iterations | Execution Time | Bytes       | Allocations    |
 | --------- | ---------- | -------------- | ----------- | -------------- |
 | Part1     | 34816      | 38335 ns/op    | 6664 B/op   | 106 allocs/op  |
+| Part2     | 18060      | 67313 ns/op    | 12003 B/op  | 121 allocs/op  |
